@@ -89,7 +89,7 @@ public class App {
         double time = isNumber();
 
         if(gender == 1.0) {
-            bac = ((nod * abv) * (5.14/weight)*0.73)-(0.015*time);
+            bac = Math.round((((nod * abv) * (5.14/weight)*0.73)-(0.015*time))*100.0)/100.0;
         }
         else{
             bac = Math.round((((nod * abv) * (5.14/weight)*0.66)-(0.015*time))*100.0)/100.0;
