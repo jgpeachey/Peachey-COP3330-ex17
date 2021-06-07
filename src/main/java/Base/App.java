@@ -43,13 +43,19 @@ public class App {
     static Scanner in = new Scanner(System.in);
 
     static double isNumber(){
+        int i = 1;
         double input = 0;
-        try{
-          input = in.nextDouble();
-        }
-        catch (Exception e){
-            System.out.println("That was not a number.Please restart program.");
-            System.exit(0);
+        boolean honest = in.hasNextDouble();
+        while(i == 1){
+            if(honest){
+                input = in.nextDouble();
+                i = 0;
+            }
+            else{
+                System.out.println("Please enter a number.");
+                in.next();
+                honest = in.hasNextDouble();
+            }
         }
         return input;
     }
@@ -57,19 +63,22 @@ public class App {
 
     public static void main(String[] args) {
 
-        double bac = 0;
+        double bac;
+        int i = 1;
 
         System.out.println("What is your weight?");
         double weight = isNumber();
         System.out.println("What is your gender (male = 1 female = 2)?");
         double gender = isNumber();
 
-        if(gender == 1 || gender == 2){
-
-        }
-        else{
-            System.out.println("That was not a 1 or 2.Please restart program.");
-            System.exit(0);
+        while(i == 1){
+            if(gender == 1 || gender == 2){
+               i = 0;
+            }
+            else{
+                System.out.println("Please enter 1 or 2.");
+                gender = isNumber();
+            }
         }
 
         System.out.println("What is the number of drinks you have had?");
