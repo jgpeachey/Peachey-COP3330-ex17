@@ -6,32 +6,35 @@
 package Challenge;
 
 /*
-Write a program that asks the user for their age and compare it to the
-legal driving age of sixteen. If the user is sixteen or older, then the
-program should display "You are old enough to legally drive." If the user
-is under sixteen, the program should display "You are not old enough to
-legally drive."
+Create a program that prompts for your weight, gender, number of drinks,
+the amount of alcohol by volume of the drinks consumed (as a percent), and
+the amount of time since your last drink. Calculate your blood alcohol
+content (BAC) using this formula
+
+BAC = (A × 5.14 / W × r) − .015 × H
+where:
+A = (number of drinks * alcohol by volume) is total alcohol consumed, in ounces (oz).
+W is body weight in pounds.
+r is the alcohol distribution ratio:
+0.73 for men
+0.66 for women
+H is number of hours since the last drink.
+Display whether or not it’s legal to drive by comparing the blood alcohol content to 0.08.
 
 Example Output:
-What is your age? 15
-You are not old enough to legally drive.
-        Or
-What is your age? 35
-You are old enough to legally drive.
+Your BAC is 0.08
+It is not legal for you to drive.
 
-Constraints
-*Use a single output statement.
-*Use a ternary operator to write this program. If your language doesn’t
-support a ternary operator, use a regular if/else statement, and still use
-a single output statement to display the message.
+Constraint:
+Prevent the user from entering non-numeric values.
 
-Challenges
-*If the user enters a number that’s less than zero or enters non-numeric
-data, display an error message that asks the user to enter a valid age.
-*Instead of hard-coding the driving age in your program logic, research
-driving ages for various countries and create a lookup table for the driving
-ages and countries. Prompt for the age, and display which countries the
-user can legally drive in.
+Challenges:
+*Handle metric units.
+*Look up the legal BAC limit by state and prompt for the state. Display a
+message that states whether or not it’s legal to drive based on the
+computed BAC.
+*Develop this as a mobile application that makes it easy to record each
+drink, updating the BAC each time a drink is entered.
  */
 
 public class App {
